@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/splashFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_cityPickFragment"
+            app:destination="@id/cityPickFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cityPickFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.CityPickFragment"
+        android:label="CityPickFragment" >
+        <action
+            android:id="@+id/action_cityPickFragment_to_emptyFragment"
+            app:destination="@id/emptyFragment" />
+        <action
+            android:id="@+id/action_cityPickFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emptyFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.EmptyFragment"
+        android:label="EmptyFragment" />
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.MapFragment"
+        android:label="MapFragment" />
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.ShopFragment"
+        android:label="ShopFragment" />
+</navigation>

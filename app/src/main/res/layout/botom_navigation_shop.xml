@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <TextView
+        android:id="@+id/textview_map"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:drawablePadding="6dp"
+        android:drawableTop="@drawable/navigation_map_icon_selector"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/map"/>
+    <TextView
+        android:id="@+id/textview_web"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:drawablePadding="6dp"
+        android:drawableTop="@drawable/navigation_web_icon_selector"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/web_site"/>
+    <TextView
+        android:id="@+id/textview_contact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="5dp"
+        android:drawablePadding="6dp"
+        android:drawableTop="@drawable/navigation_contact_icon_selector"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="@string/contact"/>
+
+
+
+
+
+
+</LinearLayout>
