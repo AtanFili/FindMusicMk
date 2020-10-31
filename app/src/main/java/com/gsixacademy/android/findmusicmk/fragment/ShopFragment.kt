@@ -32,8 +32,8 @@ class ShopFragment:Fragment() {
 
         }
         textview_contact.setOnClickListener {
-            val callIntent=Intent(Intent.ACTION_DIAL, Uri.parse("+0038977859244"))
-            requireActivity().startActivity(callIntent)
+            val callIntent=Intent(Intent.ACTION_CALL, Uri.parse("tel:"+"0038977859244"))
+            startActivity(callIntent)
         }
     }
 }
