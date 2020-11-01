@@ -14,6 +14,7 @@ class ShopData (): Parcelable {
     var name:String?=null
     var web:String?=null
     var working_hours:WorkingHoursData?=null
+    var image:String?=null
 
     constructor(parcel: Parcel) : this() {
         city = parcel.readString()

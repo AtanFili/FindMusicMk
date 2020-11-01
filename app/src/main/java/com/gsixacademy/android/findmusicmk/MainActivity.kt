@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 shopModel=snapshot.getValue(ShopModel::class.java)
-                Log.d("Proba","${shopModel?.shop?.size}")
+
             }
 
         }
