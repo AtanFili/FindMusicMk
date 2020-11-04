@@ -8,12 +8,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.gsixacademy.android.findmusicmk.R
-import com.gsixacademy.android.findmusicmk.data.SpinerModel
-import com.gsixacademy.android.findmusicmk.fragment.CityPickFragment
 
 class CityAdapter(
     val context: Activity,
-    val data: () -> Unit
+    val data: Array<String?>
 ):BaseAdapter(){
 
     private val inflater:LayoutInflater=context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -33,16 +31,13 @@ class CityAdapter(
             view=convertView
             vh=view.tag as ItemHolder
         }
-        vh.cityname.text=data.get(position).city
+        vh.cityname.text=data.get(position)
         return  view
     }
-    fun addItems(city:ArrayList<SpinerModel>){
-        data.addAll(city)
-        notifyDataSetChanged()
-    }
 
-    override fun getItem(position: Int): Any {
-        return data.get(position)
+
+    override fun getItem(position: Int): String? {
+        return data[position]
     }
 
     override fun getCount(): Int {

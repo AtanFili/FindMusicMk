@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_cityPickFragment_to_mapFragment"
             app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_cityPickFragment_to_shopFragment"
+            app:destination="@id/shopFragment" />
     </fragment>
     <fragment
         android:id="@+id/emptyFragment"
@@ -48,5 +51,13 @@
     <fragment
         android:id="@+id/shopFragment"
         android:name="com.gsixacademy.android.findmusicmk.fragment.ShopFragment"
-        android:label="ShopFragment" />
+        android:label="ShopFragment" >
+        <action
+            android:id="@+id/action_shopFragment_to_singleShopFragment"
+            app:destination="@id/singleShopFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleShopFragment"
+        android:name="com.gsixacademy.android.findmusicmk.fragment.SingleShopFragment"
+        android:label="SingleShopFragment" />
 </navigation>

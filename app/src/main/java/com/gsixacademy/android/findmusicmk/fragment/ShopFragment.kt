@@ -8,10 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.gsixacademy.android.findmusicmk.R
+import com.gsixacademy.android.findmusicmk.adapters.ShopAdapter
+import com.gsixacademy.android.findmusicmk.data.ShopData
+import com.gsixacademy.android.findmusicmk.data.ShopModel
 import kotlinx.android.synthetic.main.botom_navigation_shop.*
+import kotlinx.android.synthetic.main.recycler_shop.*
+import kotlinx.android.synthetic.main.shop_fragment.*
 
 class ShopFragment:Fragment() {
+
+    lateinit var shopAdapter:ShopAdapter
+    var shopModel: ShopModel? = null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -22,18 +31,24 @@ class ShopFragment:Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        // botom navigation listeners
-        textview_map.setOnClickListener {
-            findNavController().navigate(R.id.action_cityPickFragment_to_mapFragment)
-        }
-        textview_web.setOnClickListener {
-            val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
-            startActivity(urlIntent)
+        var shops: HashSet<String> = HashSet()
+
+
+        val array= arrayOfNulls<String>(shops.size)
+        shopAdapter= ShopAdapter(requireActivity(),shops.toArray(array))
+        recyclerView_shop.adapter=shopAdapter
+
+
+        shop_iv.setOnClickListener{
+            var bundle=Bundle()
+            bundle.putString("shopClicked",recyclerView_shop.isSelected.toString())
+            findNavController().navigate(R.id.action_shopFragment_to_singleShopFragment,bundle)
 
         }
-        textview_contact.setOnClickListener {
-            val callIntent=Intent(Intent.ACTION_CALL, Uri.parse("tel:"+"0038977859244"))
-            startActivity(callIntent)
-        }
+
+
     }
+
+
+
 }
