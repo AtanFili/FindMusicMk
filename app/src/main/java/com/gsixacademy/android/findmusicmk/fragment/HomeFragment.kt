@@ -34,7 +34,7 @@ class HomeFragment:Fragment() {
         textview_equipment.setOnClickListener {
             var bundle = Bundle()
             bundle.putString("itemClicked","equipment")
-            findNavController().navigate(R.id.action_homeFragment_to_shopFragment,bundle)
+            findNavController().navigate(R.id.action_homeFragment_to_cityPickFragment,bundle)
         }
 
     }

@@ -9,9 +9,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gsixacademy.android.findmusicmk.R
+import com.gsixacademy.android.findmusicmk.data.ShopData
 import kotlinx.android.synthetic.main.botom_navigation_shop.*
+import kotlinx.android.synthetic.main.single_shop.*
 
 class SingleShopFragment:Fragment() {
+lateinit var shopData:ShopData
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -19,15 +22,18 @@ class SingleShopFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.single_shop,container,false)
+
     }
+
 
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
 
+
         textview_map.setOnClickListener {
-            findNavController().navigate(R.id.action_cityPickFragment_to_mapFragment)
+            findNavController().navigate(R.id.action_singleShopFragment_to_mapFragment)
         }
         textview_web.setOnClickListener {
             val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com"))
@@ -38,6 +44,7 @@ class SingleShopFragment:Fragment() {
             val callIntent= Intent(Intent.ACTION_CALL, Uri.parse("tel:"+"0038977859244"))
             startActivity(callIntent)
         }
+
 
     }
 }

@@ -49,7 +49,7 @@ class MapFragment:Fragment(),OnMapReadyCallback{
                 val markerOptions=MarkerOptions().position(LatLng(shop.latLong?.lat!!,shop.latLong?.long!!))
                     .title(shop.name)
                     .snippet("see more..")
-               builder.include(markerOptions.position)
+                builder.include(markerOptions.position)
                 map.addMarker(markerOptions).tag=shop.id
 
             }

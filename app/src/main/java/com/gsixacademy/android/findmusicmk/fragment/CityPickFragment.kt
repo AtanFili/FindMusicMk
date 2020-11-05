@@ -61,9 +61,9 @@ class CityPickFragment:Fragment() {
         city_spinner.adapter=cityAdapter
 
         button_next.setOnClickListener{
-            Log.d("selectedItem",""+city_spinner.selectedItem.toString())
             var bundle = Bundle()
             bundle.putString("cityClicked",city_spinner.selectedItem.toString())
+            bundle.putString("selectedItem",arguments?.getString("itemClicked"))
             findNavController().navigate(R.id.action_cityPickFragment_to_shopFragment,bundle)
         }
     }
