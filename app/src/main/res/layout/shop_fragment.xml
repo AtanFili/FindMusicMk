@@ -1,64 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shopfragmentscrolview"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/shopfragmentscrolview">
+    android:layout_height="650dp"
+    android:background="@drawable/shop_screen">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <TextView
+        android:id="@+id/title_shop"
+        style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/shop"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/shopscreen"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/shop_screen"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
 
-
-        <TextView
-            android:id="@+id/title_shop"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:textAllCaps="true"
-            android:gravity="center"
-            android:text="@string/shop"
-            android:textColor="@android:color/white"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-
-            android:id="@+id/shop_iv"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="30dp"
-            android:padding="20dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintTop_toBottomOf="@id/title_shop" />
+        android:id="@+id/shop_iv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:padding="20dp"
+        android:scaleType="centerInside"
+        app:layout_constraintTop_toBottomOf="@id/title_shop" />
 
 
-        <TextView
-            android:id="@+id/shop_about_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:padding="30dp"
-            android:text="@string/shop_about_text"
-            android:textColor="@android:color/white"
-            app:layout_constraintTop_toBottomOf="@id/shop_iv" />
+    <TextView
+        android:id="@+id/shop_about_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:padding="30dp"
+        android:text="@string/shop_about_text"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/shop_iv" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    />
 
 
-</ScrollView>
+

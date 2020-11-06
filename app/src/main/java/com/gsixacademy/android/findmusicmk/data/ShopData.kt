@@ -15,6 +15,7 @@ class ShopData (): Parcelable {
     var web:String?=null
     var working_hours:WorkingHoursData?=null
     var image:String?=null
+    var about:String?=null
 
     constructor(parcel: Parcel) : this() {
         city = parcel.readString()
@@ -25,6 +26,7 @@ class ShopData (): Parcelable {
         name = parcel.readString()
         web = parcel.readString()
         working_hours = parcel.readParcelable(WorkingHoursData::class.java.classLoader)
+        about=parcel.readString()
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -36,6 +38,7 @@ class ShopData (): Parcelable {
         parcel.writeString(name)
         parcel.writeString(web)
         parcel.writeParcelable(working_hours, flags)
+        parcel.writeString(about)
     }
 
     override fun describeContents(): Int {

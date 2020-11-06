@@ -34,6 +34,7 @@ class ShopAdapter (
         fun bindData(shopData: ShopData, position: Int) {
             itemView.title_shop.text=shopData.name
             Picasso.get().load(shopData.image).centerCrop().fit().into(itemView.shop_iv)
+            itemView.shop_about_tv.text=shopData.about
             itemView.title_shop.setOnClickListener {
             shopDatasClickEvent.invoke(ShopDataClickEvent.ShopDataItemClicked(shopData))
             }
