@@ -21,6 +21,7 @@ import com.gsixacademy.android.findmusicmk.data.ShopModel
 class MapFragment:Fragment(),OnMapReadyCallback{
     private var shopModel:ShopModel?=null
     private lateinit var map:GoogleMap
+    var shopName = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,11 +34,13 @@ class MapFragment:Fragment(),OnMapReadyCallback{
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val mapFragment=childFragmentManager.findFragmentById(R.id.fragment_map)as SupportMapFragment
-       shopModel=(activity as MainActivity).shopModel
+        shopName = arguments?.getString("shopName")?:""
+        shopModel=(activity as MainActivity).shopModel
         mapFragment.getMapAsync(this)
     }
     override fun onMapReady(googleMap: GoogleMap) {
         map= googleMap
+        map.uiSettings.isZoomControlsEnabled = true
         googleMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(activity,R.raw.my_map_style))
         setMarkers()
     }
@@ -45,13 +48,17 @@ class MapFragment:Fragment(),OnMapReadyCallback{
     fun setMarkers(){
         if (shopModel?.shop!=null){
             val builder =LatLngBounds.builder()
-            for (shop in shopModel!!.shop!!){
+            for (shop in shopModel?.shop!!){
+                if(shop?.latLong==null){
+                    continue
+                }
+                if(shop?.name != shopName)
+                {continue}
                 val markerOptions=MarkerOptions().position(LatLng(shop.latLong?.lat!!,shop.latLong?.long!!))
                     .title(shop.name)
                     .snippet("see more..")
                 builder.include(markerOptions.position)
                 map.addMarker(markerOptions).tag=shop.id
-
             }
 
             val bounds=builder.build()

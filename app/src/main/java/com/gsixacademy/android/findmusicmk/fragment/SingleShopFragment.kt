@@ -17,8 +17,6 @@ import kotlinx.android.synthetic.main.botom_navigation_shop.*
 import kotlinx.android.synthetic.main.single_shop.*
 
 class SingleShopFragment:Fragment() {
-    lateinit var shopData:ShopData
-
     var shopModel: ShopModel? = null
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,24 +35,30 @@ class SingleShopFragment:Fragment() {
         val shopName = arguments?.getString("shopName")?:""
         val shopImage = arguments?.getString("shopImage")?:""
         val shopAbout = arguments?.getString("shopAbout")?:""
+        val shopWeb = arguments?.getString("shopWeb")?:""
+        val shopPhone = arguments?.getString("shopPhone")?:""
 
         title_shop.text=shopName
         Picasso.get().load(shopImage).centerCrop().fit().into(shop_iv)
         shop_about_tv.text=shopAbout
 
         textview_map.setOnClickListener {
-            findNavController().navigate(R.id.action_singleShopFragment_to_mapFragment)
+            var bundle = Bundle()
+            bundle.putString("shopName", shopName)
+            findNavController().navigate(R.id.action_singleShopFragment_to_mapFragment,bundle)
         }
         textview_web.setOnClickListener {
 
-
-            val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse("web"+shopData.web))
+            var shopRealUrl = if(shopWeb.startsWith("http")) shopWeb else "https://$shopWeb"
+            val urlIntent = Intent(Intent.ACTION_VIEW, Uri.parse(shopRealUrl))
             startActivity(urlIntent)
 
         }
+        if (shopPhone == "")
+            textview_contact.visibility = View.GONE
         textview_contact.setOnClickListener {
 
-            val callIntent= Intent(Intent.ACTION_CALL, Uri.parse("tel:"+shopData.contact?.mob))
+            val callIntent= Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+shopPhone))
             startActivity(callIntent)
         }
 

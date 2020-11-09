@@ -65,6 +65,14 @@ class ShopFragment:Fragment() {
                 bundle.putString("shopName", it.shopdata.name)
                 bundle.putString("shopImage", it.shopdata.image)
                 bundle.putString("shopAbout", it.shopdata.about)
+                bundle.putString("shopWeb", it.shopdata.web?:"www.google.com")
+
+
+                var phone =  it.shopdata.contact?.phone
+                if(phone==null)
+                  phone = it.shopdata.contact?.mob
+                bundle.putString("shopPhone", phone?:"")
+
 
 
                 findNavController().navigate(R.id.action_shopFragment_to_singleShopFragment, bundle)
