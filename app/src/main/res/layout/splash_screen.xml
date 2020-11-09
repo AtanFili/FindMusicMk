@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#111111"
+    android:background="@color/pozadina"
     android:layout_height="match_parent">
 
 
@@ -11,20 +11,9 @@
         android:id="@+id/splashScreen_IV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitCenter"
-        android:src="@drawable/splash_screen"/>
-    <TextView
-        android:id="@+id/textview_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Find Music MK"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textSize="35sp"
-        style="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@android:color/white"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/splash_jpg"/>
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_next_screen"
@@ -33,6 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="20dp"
+        android:backgroundTint="@android:color/background_light"
         android:src="@drawable/icon_arrow_right"/>
 
 

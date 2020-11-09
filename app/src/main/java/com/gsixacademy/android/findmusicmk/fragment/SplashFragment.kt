@@ -1,5 +1,6 @@
 package com.gsixacademy.android.findmusicmk.fragment
 
+import android.app.ActionBar
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -16,11 +17,17 @@ class SplashFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.splash_screen,container,false)
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         fab_next_screen.setOnClickListener{findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
         }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        
     }
 }

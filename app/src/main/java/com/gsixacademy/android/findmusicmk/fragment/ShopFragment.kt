@@ -62,7 +62,11 @@ class ShopFragment:Fragment() {
             if(it is ShopDataClickEvent.ShopDataItemClicked) {
                 Log.d("shopClicked", "" +it.shopdata.name)
                 var bundle = Bundle()
-                bundle.putString("shopClicked", it.shopdata.name)
+                bundle.putString("shopName", it.shopdata.name)
+                bundle.putString("shopImage", it.shopdata.image)
+                bundle.putString("shopAbout", it.shopdata.about)
+
+
                 findNavController().navigate(R.id.action_shopFragment_to_singleShopFragment, bundle)
             }
         }

@@ -12,12 +12,13 @@ import com.gsixacademy.android.findmusicmk.MainActivity
 import com.gsixacademy.android.findmusicmk.R
 import com.gsixacademy.android.findmusicmk.data.ShopData
 import com.gsixacademy.android.findmusicmk.data.ShopModel
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.botom_navigation_shop.*
 import kotlinx.android.synthetic.main.single_shop.*
 
 class SingleShopFragment:Fragment() {
     lateinit var shopData:ShopData
-    val shopClicked = arguments?.getString("shopClicked")?:""
+
     var shopModel: ShopModel? = null
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,8 +34,13 @@ class SingleShopFragment:Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         shopModel = (activity as MainActivity).shopModel
-        title_shop.setText("PROBA")
+        val shopName = arguments?.getString("shopName")?:""
+        val shopImage = arguments?.getString("shopImage")?:""
+        val shopAbout = arguments?.getString("shopAbout")?:""
 
+        title_shop.text=shopName
+        Picasso.get().load(shopImage).centerCrop().fit().into(shop_iv)
+        shop_about_tv.text=shopAbout
 
         textview_map.setOnClickListener {
             findNavController().navigate(R.id.action_singleShopFragment_to_mapFragment)
@@ -55,3 +61,4 @@ class SingleShopFragment:Fragment() {
 
     }
 }
+//Picasso.get().load(shopData.image).centerCrop().fit().into(itemView.shop_iv)
