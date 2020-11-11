@@ -4,7 +4,7 @@
     <string name="pick_a_city">Pick a City</string>
     <string name="shop">SHOP</string>
     <string name="shop_about_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</string>
-    <string name="map">MAP</string>
+    <string name="map">Map</string>
     <string name="web_site">Web Site</string>
     <string name="contact">contact</string>
 </resources>
