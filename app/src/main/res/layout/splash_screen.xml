@@ -22,6 +22,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_margin="20dp"
+        app:backgroundTint="@color/white"
         android:backgroundTint="@android:color/background_light"
         android:src="@drawable/icon_arrow_right"/>
 

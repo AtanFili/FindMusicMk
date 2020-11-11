@@ -32,12 +32,13 @@ class ShopAdapter (
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bindData(shopData: ShopData, position: Int) {
-            itemView.title_shop.text=shopData.name
-            Picasso.get().load(shopData.image).centerCrop().fit().into(itemView.shop_iv)
+            itemView.title_shop.text=shopData.name?.capitalize()
+            Picasso.get().load(shopData.image).fit().into(itemView.shop_iv)
             itemView.shop_about_tv.text=shopData.about
-            itemView.title_shop.setOnClickListener {
+            itemView.shopfragmentscrolview.setOnClickListener {
             shopDatasClickEvent.invoke(ShopDataClickEvent.ShopDataItemClicked(shopData))
             }
+
         }
     }
 }

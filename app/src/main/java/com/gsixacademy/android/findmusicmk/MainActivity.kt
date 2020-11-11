@@ -3,6 +3,7 @@ package com.gsixacademy.android.findmusicmk
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import com.google.firebase.database.*
 import com.gsixacademy.android.findmusicmk.data.ShopData
 import com.gsixacademy.android.findmusicmk.data.ShopModel
@@ -12,6 +13,10 @@ class MainActivity : AppCompatActivity() {
     var shopModel:ShopModel?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        //hide status bar
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         database=FirebaseDatabase.getInstance().reference

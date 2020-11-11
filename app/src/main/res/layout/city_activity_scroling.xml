@@ -9,8 +9,8 @@
         android:id="@+id/city_layout_picture"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/city_screen"
+        android:scaleType="fitXY"
+        android:src="@drawable/cityscreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <LinearLayout
@@ -24,23 +24,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
             android:id="@+id/city_title"
             android:layout_width="match_parent"
             android:layout_height="50sp"
-            android:text="@string/pick_a_city"
-            android:textColor="@android:color/white"
-            android:gravity="center"
-            android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:src="@drawable/pick_a_city"
+            android:scaleType="centerInside"
+
+            />
         <Spinner
             android:id="@+id/city_spinner"
             style="@style/ThemeOverlay.AppCompat.Dark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:popupBackground="@android:color/holo_blue_dark"
-            android:padding="20dp"/>
+            android:popupBackground="@color/spiner"
+            android:padding="20dp" />
 
     </LinearLayout>
     <LinearLayout
@@ -64,6 +63,9 @@
         android:layout_marginBottom="80dp"
         android:src="@drawable/icon_arrow_right"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:backgroundTint="@color/white"
+        android:backgroundTint="@color/white"
+
         app:layout_constraintRight_toRightOf="parent" />
 
 

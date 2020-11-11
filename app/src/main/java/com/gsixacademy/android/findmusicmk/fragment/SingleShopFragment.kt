@@ -3,9 +3,11 @@ package com.gsixacademy.android.findmusicmk.fragment
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.gsixacademy.android.findmusicmk.MainActivity
@@ -38,9 +40,10 @@ class SingleShopFragment:Fragment() {
         val shopWeb = arguments?.getString("shopWeb")?:""
         val shopPhone = arguments?.getString("shopPhone")?:""
 
-        title_shop.text=shopName
-        Picasso.get().load(shopImage).centerCrop().fit().into(shop_iv)
+
+        Picasso.get().load(shopImage).fit().into(shop_iv)
         shop_about_tv.text=shopAbout
+        shop_about_tv.movementMethod=ScrollingMovementMethod()
 
         textview_map.setOnClickListener {
             var bundle = Bundle()

@@ -61,6 +61,7 @@ class ShopFragment:Fragment() {
         shopAdapter= ShopAdapter(filteredShops){
             if(it is ShopDataClickEvent.ShopDataItemClicked) {
                 Log.d("shopClicked", "" +it.shopdata.name)
+
                 var bundle = Bundle()
                 bundle.putString("shopName", it.shopdata.name)
                 bundle.putString("shopImage", it.shopdata.image)
@@ -71,7 +72,7 @@ class ShopFragment:Fragment() {
                 var phone =  it.shopdata.contact?.phone
                 if(phone==null)
                   phone = it.shopdata.contact?.mob
-                bundle.putString("shopPhone", phone?:"")
+                  bundle.putString("shopPhone", phone?:"")
 
 
 
